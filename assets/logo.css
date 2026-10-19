@@ -1,0 +1,30 @@
+/* Display the supplied square logo through a wide crop without altering the original. */
+.nav-logo{width:160px;height:60px;object-fit:cover;object-position:50% 53%}
+.loading-logo{width:clamp(240px,32vw,380px);height:clamp(90px,12vw,142px);object-fit:cover;object-position:50% 53%;display:block}
+.topbar{padding-top:18px;padding-bottom:18px}
+@media(max-width:820px){.nav-logo{width:110px;height:42px}.nav-links{gap:12px}}
+@media(max-width:600px){.nav-logo{width:100px;height:38px}.hero-meta{white-space:normal;justify-content:center;flex-wrap:wrap;gap:10px;padding:0 22px}.hero-portal{width:86vw}}
+
+/* Keep the brand legible across every section, including Happy Hour. */
+.topbar,body.red-top .topbar{background:#0a0a0a;color:var(--cream);border-bottom:1px solid rgba(255,255,255,.12)}
+.topbar::before,body.red-top .topbar::before{display:none}
+body.red-top .topbar .ember{color:var(--ember)}
+.nav-logo,.loading-logo{mix-blend-mode:screen}
+#kitchen .mgroup[hidden]{display:none}
+#kitchen .mgroup{margin-bottom:0}
+#kitchen .menu-nav button{padding:10px 12px;width:100%;border-radius:4px}
+#kitchen .menu-nav button.on{background:rgba(255,255,255,.08)}
+#kitchen .menu-nav button:focus-visible,.topbar a:focus-visible{outline:2px solid #ffbd35;outline-offset:4px}
+#kitchen .menu-picker select{min-height:48px}
+section[id]{scroll-margin-top:110px}
+
+/* Primary reservation action, kept at the right edge of the header. */
+.topbar .reserve-button,body.red-top .topbar .reserve-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 20px;border:1px solid #ffbd35;border-radius:3px;background:#ffbd35;color:#0a0a0a;font-weight:800;letter-spacing:.06em;white-space:nowrap;transition:background .2s,border-color .2s}
+.topbar .reserve-button:hover,body.red-top .topbar .reserve-button:hover{background:#ffd477;border-color:#ffd477;color:#0a0a0a}
+@media(max-width:600px){.topbar .reserve-button{padding:10px 12px;font-size:11px}.nav-links{gap:10px}}
+
+.bk-steps span{flex:1;padding:12px 0;border-bottom:2px solid #444;color:#aaa;font-size:14px}.bk-steps span.on{border-color:#ffbd35;color:#ffbd35}
+.booking-selects{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.booking-selects label,.booking-time{display:block;font-size:14px}
+#bk select{display:block;width:100%;min-height:48px;background:#161616;color:#f5f1e8;border:1px solid #666;border-radius:4px;padding:10px;margin-top:8px;font:inherit}
+.calendar{border:1px solid #555;padding:16px;margin:24px 0}.calendar-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.calendar-head button{width:44px;height:44px;border:1px solid #666}.calendar-week,.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.calendar-week span{text-align:center;font-size:12px;color:#aaa;padding:10px 0}.calendar-days button{min-height:44px;border:1px solid transparent;border-radius:4px}.calendar-days button[aria-current=date]{border-color:#ffbd35}.calendar-days button.selected{background:#ffbd35;color:#111;font-weight:700}.calendar-days button:disabled,.calendar-head button:disabled{opacity:.25;cursor:not-allowed}#bk button:focus-visible,#bk input:focus-visible,#bk select:focus-visible{outline:2px solid #ffbd35;outline-offset:3px}.calendar-days button:hover:not(:disabled){border-color:#ffbd35}
+@media(max-width:480px){.booking-selects{grid-template-columns:1fr}.calendar{padding:8px}.bk-nav .btn{padding:12px;font-size:10px}.bk-inner{margin-top:24px}}
